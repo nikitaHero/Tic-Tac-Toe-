@@ -42,11 +42,12 @@ export default ({ gameStatus, setGameStatus, onWin, onStep }) => {
 
   return (
     <Wrapper>
-      {gameStatus.squares.map((square, index) => (
-        <Squeare onClick={() => handleSquareClick(index)} key={index}>
-          {square !== null ? square : ""}
-        </Squeare>
-      ))}
+      {gameStatus &&
+        gameStatus.squares.map((square, index) => (
+          <Squeare onClick={() => handleSquareClick(index)} key={index}>
+            {square !== null ? square : ""}
+          </Squeare>
+        ))}
     </Wrapper>
   );
 };
